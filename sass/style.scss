@@ -26,6 +26,9 @@ body {
        &:hover {
         font-weight: 700;
        }
+       &.active {
+        font-weight: 700;
+       }
     }
 }
 /* Header */
@@ -61,13 +64,13 @@ body {
     }
     .project {
         display: none;
-        &:active {
+        &.active {
             display: block;
         }
     }
     .contact {
         display: none;
-        &:active {
+        &.active {
             display: block;
         }
     }
