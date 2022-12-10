@@ -1,6 +1,7 @@
 'use strict';
 
-const listClickHandler = function () {
+const listClickHandler = function (event) {
+    event.preventDefault ();
     const clickedLink = this;
     console.log("link was clicked");
 
