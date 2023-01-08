@@ -1,6 +1,10 @@
 {
   'use strict';
 
+  const templates = {
+    projectLink: Handlebars.compile(document.querySelector('#template-project-link').innerHTML),
+  };
+
   const select = {
     all: {
       project: '.project',
@@ -9,13 +13,10 @@
     },
     listOf: {
       projects: '.projects.list',
-      contact: '.list.contacts' 
+      contact: '.list.contacts',
     }
   };
  
-
-
-
 
   const listClickHandler = function (event) {
     event.preventDefault();
@@ -50,25 +51,29 @@
 
   const generateProjectList = function (){
     const projectList = document.querySelector(select.listOf.projects);
-    console.log('projectlist', projectList);
+    
     projectList.innerHTML = '';
-    console.log('projectList', projectList.innerHTML);
+    
     const projects = document.querySelectorAll(select.all.project);
-    console.log('projects', projects);
+    
     let titleList = '';
     for(let project of projects){
       const projectID = project.getAttribute('id');
-      console.log('projectID', projectID);
+      
       const projectTitleElement = project.querySelector('.project-title');
-      console.log('projectTitle', projectTitleElement);
+      
       const projectTitle = projectTitleElement.innerHTML;
-      const projectLinkHtml = '<li><a href = "#' + projectID + '">' + projectTitle + '</a></li>';
-      console.log('projectlinkhtml', projectLinkHtml);
+      // const projectLinkHtml = '<li><a href = "#' + projectID + '">' + projectTitle + '</a></li>';
+      const linkHTMLData = {id:projectID, title:projectTitle};
+      const projectLinkHtml = templates.projectLink(linkHTMLData);
+
+
+
       titleList = titleList + projectLinkHtml;
       
     }
     projectList.innerHTML = titleList;
-    console.log('titlelist', titleList);
+    
     const links = document.querySelectorAll('.list a');
 
     for (const link of links) {
