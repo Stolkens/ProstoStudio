@@ -82,4 +82,34 @@ p {
             display: block;
         }
     }
- }
+}
+
+/* Media */
+
+@media (max-width: 767px){
+    .wrapper {
+        flex-direction: column;
+        .content .project  {
+            margin-top: 50px;
+            img {
+                width: 100%;
+            }
+        }
+        .header .logo {
+            margin-left: 0;
+        }
+        .list {
+            flex: 100%;
+        }
+      
+    }
+
+}
+@media (min-width: 768px) and (max-width: 940px){
+    .wrapper {
+        .content .project {
+            margin-top: 50px;
+        }
+    }
+}
+
