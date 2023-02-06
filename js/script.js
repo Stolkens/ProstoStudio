@@ -129,6 +129,10 @@
       projects: '.projects.list',
       contact: '.list.contacts',
     },
+    containerOf: {
+      projectsList: '.sidebar',
+      projects: '.content',
+    }
   };
 
 
@@ -144,14 +148,14 @@
     
     const element = createDOMFromHTML(generatedHtml);
     
-    const projectWrapper = document.querySelector(select.all.project);
+    const projectWrapper = document.querySelector(select.containerOf.projects);
     
     projectWrapper.appendChild(element);
 
     
 
     
-    const projectListWrapper = document.querySelector('.sidebar');
+    const projectListWrapper = document.querySelector(select.containerOf.projectsList);
     console.log('projectListWrapper', projectListWrapper);
     projectListWrapper.appendChild(element2);
     
