@@ -67,7 +67,7 @@ p {
     flex: 65%;
     
     img {
-        width: 600px;
+        width: 60%;
     }
     .project {
         display: none;
@@ -77,18 +77,21 @@ p {
     }
     .contact {
         display: none;
-        width: 600px;
+        width: 60%;
         &.active {
             display: block;
         }
     }
     .project-title {
         margin-top: 0;
-        width: 600px;
+        width: 60%;
+        text-align: end;
+        
     }
     .project-info {
-        width: 600px;
+        width: 60%;
         margin-bottom: 50px;
+        line-height: 2;
     }
 }
 

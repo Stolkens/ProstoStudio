@@ -19,9 +19,16 @@
 				<img src="/images/logo.jpg" alt="logo" class="logo" />
 			</header>
 
-			<aside class="sidebar">
-				<ul class="projects list"></ul>
+			<aside class="sidebar">	
 			</aside>
+
+			<script id="template-projects-list" type="text/x-handlebars-template">		
+				<ul class="projects list">
+				<li><a href="#project-{{id}}">{{name}}</a></li>
+				</ul>	
+			</script>
+			
+			
 
 			<nav class="nav">
 				<ul class="contacts list">
@@ -31,278 +38,25 @@
 				</ul>
 			</nav>
 
-			<main class="content">
-				<div class="project" id="project-1">
-					<h3 class="project-title">
-						projekt gabinetu stomatologicznego w Mysłowicach
-					</h3>
-					<p class="project-info">
-						Tu bedzie opis projektu i takie takie. Lorem ipsum dolor sit amet,
-						consectetur adipiscing elit. Integer at ante vel ligula commodo
-						luctus in id sapien. Nullam venenatis erat quam, at volutpat arcu
-						faucibus ac. Sed vitae aliquet neque, in rhoncus nisi. In hac
-						habitasse platea dictumst. Integer id tristique ipsum. Curabitur
-						cursus, sapien nec cursus egestas, neque lectus ultrices dui, sed
-						tempus ante erat ut elit. Aliquam vel placerat odio. Duis luctus,
-						justo malesuada fringilla efficitur, purus ante tempor turpis, non
-						lobortis nunc metus in nisl. Sed dui magna, auctor ac neque eu,
-						mollis bibendum diam. Aenean rutrum velit eu magna varius gravida.
-						Curabitur efficitur libero quis quam efficitur, a convallis ante
-						ultricies. Quisque eu lorem eget lorem rutrum interdum. Curabitur
-						eleifend tortor in tortor blandit egestas. Donec rhoncus, dui eget
-						varius laoreet, sem tellus aliquam orci, vitae tempor nibh lacus a
-						quam. Nam vel mi hendrerit, vulputate felis non, iaculis ante.
-						Quisque est diam, mattis at metus eget, mattis sagittis elit. Mauris
-						ut justo facilisis erat ultrices finibus. Nulla quis lorem mi. Nunc
-						nec facilisis purus. Ut tortor ipsum, venenatis nec auctor non,
-						vehicula vel ligula. Maecenas consectetur massa vulputate nisl
-						molestie, efficitur sollicitudin diam viverra. Maecenas eget viverra
-						velit. Suspendisse mollis, diam egestas malesuada mollis.
-					</p>
-					<img src="/images/gabinet1.jpg" alt="gabinet" />
-					<img src="/images/gabinet2.jpg" alt="gabinet" />
-					<img src="/images/gabinet4.jpg" alt="gabinet" />
-					<img src="/images/gabinet5.jpg" alt="gabinet" />
-					<img src="/images/gabinet6.jpg" alt="gabinet" />
-					<img src="/images/gabinet7.jpg" alt="gabinet" />
-					<img src="/images/gabinet8.jpg" alt="gabinet" />
-					<img src="/images/gabinet9.jpg" alt="gabinet" />
-					<img src="/images/gabinet10.jpg" alt="gabinet" />
-					<img src="/images/gabinet11.jpg" alt="gabinet" />
-				</div>
-				<div class="project" id="project-2">
-					<h3 class="project-title">projekt mieszkania na Nikiszowcu</h3>
-                    <p class="project-info">
-						Tu bedzie opis projektu i takie takie. Lorem ipsum dolor sit amet,
-						consectetur adipiscing elit. Integer at ante vel ligula commodo
-						luctus in id sapien. Nullam venenatis erat quam, at volutpat arcu
-						faucibus ac. Sed vitae aliquet neque, in rhoncus nisi. In hac
-						habitasse platea dictumst. Integer id tristique ipsum. Curabitur
-						cursus, sapien nec cursus egestas, neque lectus ultrices dui, sed
-						tempus ante erat ut elit. Aliquam vel placerat odio. Duis luctus,
-						justo malesuada fringilla efficitur, purus ante tempor turpis, non
-						lobortis nunc metus in nisl. Sed dui magna, auctor ac neque eu,
-						mollis bibendum diam. Aenean rutrum velit eu magna varius gravida.
-						Curabitur efficitur libero quis quam efficitur, a convallis ante
-						ultricies. Quisque eu lorem eget lorem rutrum interdum. Curabitur
-						eleifend tortor in tortor blandit egestas. Donec rhoncus, dui eget
-						varius laoreet, sem tellus aliquam orci, vitae tempor nibh lacus a
-						quam. Nam vel mi hendrerit, vulputate felis non, iaculis ante.
-						Quisque est diam, mattis at metus eget, mattis sagittis elit. Mauris
-						ut justo facilisis erat ultrices finibus. Nulla quis lorem mi. Nunc
-						nec facilisis purus. Ut tortor ipsum, venenatis nec auctor non,
-						vehicula vel ligula. Maecenas consectetur massa vulputate nisl
-						molestie, efficitur sollicitudin diam viverra. Maecenas eget viverra
-						velit. Suspendisse mollis, diam egestas malesuada mollis.
-					</p>
-					<img src="/images/nikisz1.jpg" alt="apartment" />
-					<img src="/images/nikisz2.jpg" alt="apartment" />
-					<img src="/images/nikisz3.jpg" alt="apartment" />
-					<img src="/images/nikisz4.jpg" alt="apartment" />
-					<img src="/images/nikisz5.jpg" alt="apartment" />
-					<img src="/images/nikisz6.jpg" alt="apartment" />
-					<img src="/images/nikisz7.jpg" alt="apartment" />
-					<img src="/images/nikisz8.jpg" alt="apartment" />
-				</div>
-				<div class="project" id="project-3">
-					<h3 class="project-title">
-						projekt mieszkania w Katowicach na Brynowie
-					</h3>
-                    <p class="project-info">
-						Tu bedzie opis projektu i takie takie. Lorem ipsum dolor sit amet,
-						consectetur adipiscing elit. Integer at ante vel ligula commodo
-						luctus in id sapien. Nullam venenatis erat quam, at volutpat arcu
-						faucibus ac. Sed vitae aliquet neque, in rhoncus nisi. In hac
-						habitasse platea dictumst. Integer id tristique ipsum. Curabitur
-						cursus, sapien nec cursus egestas, neque lectus ultrices dui, sed
-						tempus ante erat ut elit. Aliquam vel placerat odio. Duis luctus,
-						justo malesuada fringilla efficitur, purus ante tempor turpis, non
-						lobortis nunc metus in nisl. Sed dui magna, auctor ac neque eu,
-						mollis bibendum diam. Aenean rutrum velit eu magna varius gravida.
-						Curabitur efficitur libero quis quam efficitur, a convallis ante
-						ultricies. Quisque eu lorem eget lorem rutrum interdum. Curabitur
-						eleifend tortor in tortor blandit egestas. Donec rhoncus, dui eget
-						varius laoreet, sem tellus aliquam orci, vitae tempor nibh lacus a
-						quam. Nam vel mi hendrerit, vulputate felis non, iaculis ante.
-						Quisque est diam, mattis at metus eget, mattis sagittis elit. Mauris
-						ut justo facilisis erat ultrices finibus. Nulla quis lorem mi. Nunc
-						nec facilisis purus. Ut tortor ipsum, venenatis nec auctor non,
-						vehicula vel ligula. Maecenas consectetur massa vulputate nisl
-						molestie, efficitur sollicitudin diam viverra. Maecenas eget viverra
-						velit. Suspendisse mollis, diam egestas malesuada mollis.
-					</p>
-					<img src="/images/ania1.JPG" alt="apartment" />
-					<img src="/images/ania2.JPG" alt="apartment" />
-					<img src="/images/ania3.JPG" alt="apartment" />
-					<img src="/images/ania4.JPG" alt="apartment" />
-					<img src="/images/ania5.JPG" alt="apartment" />
-					<img src="/images/ania6.JPG" alt="apartment" />
-					<img src="/images/ania7.JPG" alt="apartment" />
-					<img src="/images/ania8.JPG" alt="apartment" />
-					<img src="/images/ania9.JPG" alt="apartment" />
-				</div>
-				<div class="project" id="project-4">
-					<h3 class="project-title">projekt domu w Mikołowie</h3>
-                    <p class="project-info">
-						Tu bedzie opis projektu i takie takie. Lorem ipsum dolor sit amet,
-						consectetur adipiscing elit. Integer at ante vel ligula commodo
-						luctus in id sapien. Nullam venenatis erat quam, at volutpat arcu
-						faucibus ac. Sed vitae aliquet neque, in rhoncus nisi. In hac
-						habitasse platea dictumst. Integer id tristique ipsum. Curabitur
-						cursus, sapien nec cursus egestas, neque lectus ultrices dui, sed
-						tempus ante erat ut elit. Aliquam vel placerat odio. Duis luctus,
-						justo malesuada fringilla efficitur, purus ante tempor turpis, non
-						lobortis nunc metus in nisl. Sed dui magna, auctor ac neque eu,
-						mollis bibendum diam. Aenean rutrum velit eu magna varius gravida.
-						Curabitur efficitur libero quis quam efficitur, a convallis ante
-						ultricies. Quisque eu lorem eget lorem rutrum interdum. Curabitur
-						eleifend tortor in tortor blandit egestas. Donec rhoncus, dui eget
-						varius laoreet, sem tellus aliquam orci, vitae tempor nibh lacus a
-						quam. Nam vel mi hendrerit, vulputate felis non, iaculis ante.
-						Quisque est diam, mattis at metus eget, mattis sagittis elit. Mauris
-						ut justo facilisis erat ultrices finibus. Nulla quis lorem mi. Nunc
-						nec facilisis purus. Ut tortor ipsum, venenatis nec auctor non,
-						vehicula vel ligula. Maecenas consectetur massa vulputate nisl
-						molestie, efficitur sollicitudin diam viverra. Maecenas eget viverra
-						velit. Suspendisse mollis, diam egestas malesuada mollis.
-					</p>
-					<img src="/images/mikolow1.JPG" alt="apartment" />
-					<img src="/images/mikolow2.JPG" alt="apartment" />
-					<img src="/images/mikolow3.JPG" alt="apartment" />
-					<img src="/images/mikolow4.JPG" alt="apartment" />
-					<img src="/images/mikolow5.JPG" alt="apartment" />
-					<img src="/images/mikolow6.JPG" alt="apartment" />
-					<img src="/images/mikolow7.JPG" alt="apartment" />
-					<img src="/images/mikolow8.JPG" alt="apartment" />
-					<img src="/images/mikolow9.JPG" alt="apartment" />
-				</div>
-				<div class="project" id="project-5">
-					<h3 class="project-title">projekt mieszkania w Warszawie</h3>
-                    <p class="project-info">
-						Tu bedzie opis projektu i takie takie. Lorem ipsum dolor sit amet,
-						consectetur adipiscing elit. Integer at ante vel ligula commodo
-						luctus in id sapien. Nullam venenatis erat quam, at volutpat arcu
-						faucibus ac. Sed vitae aliquet neque, in rhoncus nisi. In hac
-						habitasse platea dictumst. Integer id tristique ipsum. Curabitur
-						cursus, sapien nec cursus egestas, neque lectus ultrices dui, sed
-						tempus ante erat ut elit. Aliquam vel placerat odio. Duis luctus,
-						justo malesuada fringilla efficitur, purus ante tempor turpis, non
-						lobortis nunc metus in nisl. Sed dui magna, auctor ac neque eu,
-						mollis bibendum diam. Aenean rutrum velit eu magna varius gravida.
-						Curabitur efficitur libero quis quam efficitur, a convallis ante
-						ultricies. Quisque eu lorem eget lorem rutrum interdum. Curabitur
-						eleifend tortor in tortor blandit egestas. Donec rhoncus, dui eget
-						varius laoreet, sem tellus aliquam orci, vitae tempor nibh lacus a
-						quam. Nam vel mi hendrerit, vulputate felis non, iaculis ante.
-						Quisque est diam, mattis at metus eget, mattis sagittis elit. Mauris
-						ut justo facilisis erat ultrices finibus. Nulla quis lorem mi. Nunc
-						nec facilisis purus. Ut tortor ipsum, venenatis nec auctor non,
-						vehicula vel ligula. Maecenas consectetur massa vulputate nisl
-						molestie, efficitur sollicitudin diam viverra. Maecenas eget viverra
-						velit. Suspendisse mollis, diam egestas malesuada mollis.
-					</p>
-					<img src="/images/warszawa1.JPG" alt="apartment" />
-					<img src="/images/warszawa2.JPG" alt="apartment" />
-					<img src="/images/warszawa3.JPG" alt="apartment" />
-					<img src="/images/warszawa4.JPG" alt="apartment" />
-				</div>
-				<div class="project" id="project-6">
-					<h3 class="project-title">
-						projekt drugiego mieszkania na Nikiszowcu
-					</h3>
-                    <p class="project-info">
-						Tu bedzie opis projektu i takie takie. Lorem ipsum dolor sit amet,
-						consectetur adipiscing elit. Integer at ante vel ligula commodo
-						luctus in id sapien. Nullam venenatis erat quam, at volutpat arcu
-						faucibus ac. Sed vitae aliquet neque, in rhoncus nisi. In hac
-						habitasse platea dictumst. Integer id tristique ipsum. Curabitur
-						cursus, sapien nec cursus egestas, neque lectus ultrices dui, sed
-						tempus ante erat ut elit. Aliquam vel placerat odio. Duis luctus,
-						justo malesuada fringilla efficitur, purus ante tempor turpis, non
-						lobortis nunc metus in nisl. Sed dui magna, auctor ac neque eu,
-						mollis bibendum diam. Aenean rutrum velit eu magna varius gravida.
-						Curabitur efficitur libero quis quam efficitur, a convallis ante
-						ultricies. Quisque eu lorem eget lorem rutrum interdum. Curabitur
-						eleifend tortor in tortor blandit egestas. Donec rhoncus, dui eget
-						varius laoreet, sem tellus aliquam orci, vitae tempor nibh lacus a
-						quam. Nam vel mi hendrerit, vulputate felis non, iaculis ante.
-						Quisque est diam, mattis at metus eget, mattis sagittis elit. Mauris
-						ut justo facilisis erat ultrices finibus. Nulla quis lorem mi. Nunc
-						nec facilisis purus. Ut tortor ipsum, venenatis nec auctor non,
-						vehicula vel ligula. Maecenas consectetur massa vulputate nisl
-						molestie, efficitur sollicitudin diam viverra. Maecenas eget viverra
-						velit. Suspendisse mollis, diam egestas malesuada mollis.
-					</p>
-					<img src="/images/gruby1.jpg" alt="apartment" />
-					<img src="/images/gruby2.jpg" alt="apartment" />
-					<img src="/images/gruby3.jpg" alt="apartment" />
-					<img src="/images/gruby4.jpg" alt="apartment" />
-					<img src="/images/gruby5.jpg" alt="apartment" />
-					<img src="/images/gruby6.jpg" alt="apartment" />
-				</div>
-				<div class="project" id="project-7">
-					<h3 class="project-title">projekt czegoś tam</h3>
-                    <p class="project-info">
-						Tu bedzie opis projektu i takie takie. Lorem ipsum dolor sit amet,
-						consectetur adipiscing elit. Integer at ante vel ligula commodo
-						luctus in id sapien. Nullam venenatis erat quam, at volutpat arcu
-						faucibus ac. Sed vitae aliquet neque, in rhoncus nisi. In hac
-						habitasse platea dictumst. Integer id tristique ipsum. Curabitur
-						cursus, sapien nec cursus egestas, neque lectus ultrices dui, sed
-						tempus ante erat ut elit. Aliquam vel placerat odio. Duis luctus,
-						justo malesuada fringilla efficitur, purus ante tempor turpis, non
-						lobortis nunc metus in nisl. Sed dui magna, auctor ac neque eu,
-						mollis bibendum diam. Aenean rutrum velit eu magna varius gravida.
-						Curabitur efficitur libero quis quam efficitur, a convallis ante
-						ultricies. Quisque eu lorem eget lorem rutrum interdum. Curabitur
-						eleifend tortor in tortor blandit egestas. Donec rhoncus, dui eget
-						varius laoreet, sem tellus aliquam orci, vitae tempor nibh lacus a
-						quam. Nam vel mi hendrerit, vulputate felis non, iaculis ante.
-						Quisque est diam, mattis at metus eget, mattis sagittis elit. Mauris
-						ut justo facilisis erat ultrices finibus. Nulla quis lorem mi. Nunc
-						nec facilisis purus. Ut tortor ipsum, venenatis nec auctor non,
-						vehicula vel ligula. Maecenas consectetur massa vulputate nisl
-						molestie, efficitur sollicitudin diam viverra. Maecenas eget viverra
-						velit. Suspendisse mollis, diam egestas malesuada mollis.
-					</p>
-					<p>
-						tu bedzie jeszcze jedne zajebisty projekt najlepszej architekt na
-						świecie
-					</p>
-				</div>
-				<div class="contact" id="news">
-					<p>
-						Tu beda wszystkie najnowsze informacje poki co nie jest
-						gotowy.Phasellus sollicitudin, arcu vel iaculis ullamcorper, quam
-						leo viverra orci, et faucibus quam sapien vel est. Maecenas ac
-						suscipit elit. Nullam interdum, lorem vitae venenatis pulvinar, ex
-						dui malesuada nunc, tempus cursus enim metus vel nulla.
-					</p>
-				</div>
-				<div class="contact" id="about-me">
-					<p>
-						Tu beda informacje o mnie ktory poki co nie jest gotowy.Phasellus
-						sollicitudin, arcu vel iaculis ullamcorper, quam leo viverra orci,
-						et faucibus quam sapien vel est. Maecenas ac suscipit elit. Nullam
-						interdum, lorem vitae venenatis pulvinar, ex dui malesuada nunc,
-						tempus cursus enim metus vel nulla.
-					</p>
-				</div>
-				<div class="contact" id="contact-me">
-					<p>
-						Tu beda dane kontaktowe ktory poki co nie jest gotowy.Phasellus
-						sollicitudin, arcu vel iaculis ullamcorper, quam leo viverra orci,
-						et faucibus quam sapien vel est. Maecenas ac suscipit elit. Nullam
-						interdum, lorem vitae venenatis pulvinar, ex dui malesuada nunc,
-						tempus cursus enim metus vel nulla.
-					</p>
-				</div>
+
+			<main class="project">
 			</main>
+			
+			<script id="template-projects" type="text/x-handlebars-template">
+					<div class="content">
+						<h3 class="project-title">
+							{{name}}
+						</h3>
+						<p class="project-info">
+							{{description}}
+						</p>{{#each image}}
+						<img src='{{this}}'>
+						{{/each}}
+					</div>
+			</script>
 		</div>
-        <script id="template-project-link" type="text/x-handlebars-template">
-			<li><a href="#{{ id }}">{{ title }}</a></li>
-		</script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.1.0/handlebars.min.js"></script>
+				
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
 		<script src="/js/script.js"></script>
 	</body>
 </html>
