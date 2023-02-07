@@ -18,7 +18,7 @@
         'images/gabinet/gabinet11.jpg',
         'images/gabinet/gabinet12.jpg',
       ],
-      description: 'Tu bedzie opis projektu i takie takie. Lorem ipsum dolor sit amet, consectetur adi.'
+      description: 'Tu bedzie opis projektu i takie takie. Lorem ipsum dolor sit amet, consectetur adi adipiscing elit. Integer at ante vel ligula commod luctus in id sapien. Nullam venenatis erat quam, at volutpat arcufaucibus ac. Sed vitae aliquet neque, in rhoncus nisi. In hachabitasse platea dictumst. Integer id tristique ipsum. Curabiturcursus, sapien nec cursus egestas, neque lectus ultrices dui, sedtempus ante erat ut elit. Aliquam vel placerat odio. Duis luctus,justo malesuada fringilla efficitur, purus ante tempor turpis, nonlobortis nunc metus in nisl. Sed dui magna, auctor ac neque eu,mollis bibendum diam. Aenean rutrum velit eu magna varius gravida.Curabitur efficitur libero quis quam efficitur, a convallis anteultricies. Quisque eu lorem eget lorem rutrum interdum. Curabitureleifend tortor in tortor blandit egestas. Donec rhoncus, dui egetvarius laoreet, sem tellus aliquam orci, vitae tempor nibh lacus aquam. Nam vel mi hendrerit, vulputate felis non, iaculis ante.Quisque est diam, mattis at metus eget, mattis sagittis elit. Maurisut justo facilisis erat ultrices finibus. Nulla quis lorem mi. Nuncnec facilisis purus. Ut tortor ipsum, venenatis nec auctor non,vehicula vel ligula. Maecenas consectetur massa vulputate nislmolestie, efficitur sollicitudin diam viverra. Maecenas eget viverravelit. Suspendisse mollis, diam egestas malesuada mollis.'
     },
     {
       id: 2,
@@ -117,22 +117,16 @@
     
   ];
 
-
-
-
   const template = {
-    
-    projects: Handlebars.compile(document.querySelector('#template-projects').innerHTML),
     projectsList: Handlebars.compile(document.querySelector('#template-projects-list').innerHTML),
     contactList: Handlebars.compile(document.querySelector('#template-contact-list').innerHTML),
+    projects: Handlebars.compile(document.querySelector('#template-projects').innerHTML),
     contact: Handlebars.compile(document.querySelector('#template-contacts').innerHTML),
   };
 
   const select = {
     all: {
       project: '.project',
-      contact: '.contact',
-      projectTitle: '.project-title',
       links: '.list a',
     },
     listOf: {
@@ -174,51 +168,17 @@
 
     generateText(template.projects(project), select.containerOf.projects);
     
-    // const generatedHtml = template.projects(project);
-
-    // const generatedListHtml = template.projectsList(project);
-    
-    // const element = createDOMFromHTML(generatedHtml);
-
-    // const element2 = createDOMFromHTML(generatedListHtml);
-    
-    // const projectWrapper = document.querySelector(select.containerOf.projects);
-
-    // const projectListWrapper = document.querySelector(select.listOf.projects);
-    
-    // projectWrapper.appendChild(element);
-    
-    // projectListWrapper.appendChild(element2);
-
   }
   for (let contact of contacts){
     generateList(template.contactList(contact), select.listOf.contact);
 
     generateText(template.contact(contact), select.containerOf.contacts);
-    
-    // const generatedtHtml = template.contact(contact);
-
-    // const generatedListHtml = template.contactList(contact);
-
-    // const element = createDOMFromHTML(generatedtHtml);
-
-    // const element2 = createDOMFromHTML(generatedListHtml);
-
-    // const contactWrapper = document.querySelector(select.containerOf.contacts);
-
-    // const contactListWrapper = document.querySelector(select.listOf.contact);
-
-    // contactWrapper.appendChild(element);
-
-    // contactListWrapper.appendChild(element2);
- 
-    
+  
   }
 
 
-  const links = document.querySelectorAll('.list a');
+  const links = document.querySelectorAll(select.all.links);
   
-
   for (const link of links) {
     link.addEventListener('click', function(event){
       event.preventDefault();
