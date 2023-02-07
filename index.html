@@ -20,30 +20,32 @@
 			</header>
 
 			<aside class="sidebar">	
+				<ul class="projects list"></ul>
 			</aside>
 
 			<script id="template-projects-list" type="text/x-handlebars-template">		
-				<ul class="projects list">
-				<li><a href="#project-{{id}}">{{name}}</a></li>
-				</ul>	
+				<li><a href="#{{id}}">{{name}}</a></li>
 			</script>
 			
 			
-
 			<nav class="nav">
 				<ul class="contacts list">
-					<li><a href="#news">news</a></li>
-					<li><a href="#about-me">o mnie</a></li>
-					<li><a href="#contact-me">kontakt</a></li>
 				</ul>
 			</nav>
+
+			<script id="template-contact-list" type="text/x-handlebars-template">
+				
+					<li><a href="#{{id}}">{{id}}</a></li>
+				
+			</script>
+			
 
 
 			<main class="content">
 			</main>
 			
 			<script id="template-projects" type="text/x-handlebars-template">
-					<div class="project">
+					<div class="project" id="{{id}}">
 						<h3 class="project-title">
 							{{name}}
 						</h3>
@@ -53,6 +55,13 @@
 						<img src='{{this}}'>
 						{{/each}}
 					</div>
+			</script>
+
+			<script id="template-contacts" type="text/x-handlebars-template">
+				<div class="project" id="{{id}}">
+					<p>{{description}}</p>
+				</div>
+
 			</script>
 		</div>
 				

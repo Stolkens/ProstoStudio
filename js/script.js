@@ -100,30 +100,40 @@
       description: 'Tu bedzie opis projektu i takie takie. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer at ante vel ligula commod luctus in id sapien. Nullam venenatis erat quam, at volutpat arcufaucibus ac. Sed vitae aliquet neque, in rhoncus nisi. In hachabitasse platea dictumst. Integer id tristique ipsum. Curabiturcursus, sapien nec cursus egestas, neque lectus ultrices dui, sedtempus ante erat ut elit. Aliquam vel placerat odio. Duis luctus,justo malesuada fringilla efficitur, purus ante tempor turpis, nonlobortis nunc metus in nisl. Sed dui magna, auctor ac neque eu,mollis bibendum diam. Aenean rutrum velit eu magna varius gravida.Curabitur efficitur libero quis quam efficitur, a convallis anteultricies. Quisque eu lorem eget lorem rutrum interdum. Curabitureleifend tortor in tortor blandit egestas. Donec rhoncus, dui egetvarius laoreet, sem tellus aliquam orci, vitae tempor nibh lacus aquam. Nam vel mi hendrerit, vulputate felis non, iaculis ante.Quisque est diam, mattis at metus eget, mattis sagittis elit. Maurisut justo facilisis erat ultrices finibus. Nulla quis lorem mi. Nuncnec facilisis purus. Ut tortor ipsum, venenatis nec auctor non,vehicula vel ligula. Maecenas consectetur massa vulputate nislmolestie, efficitur sollicitudin diam viverra. Maecenas eget viverravelit. Suspendisse mollis, diam egestas malesuada mollis.'
     },
   ];
+  const contacts = [
+    {
+      
+      id: 'news',
+      description: 'Tu beda wszystkie najnowsze informacje poki co nie jest gotowy.Phasellus sollicitudin, arcu vel iaculis ullamcorper, quam leo viverra orci, et faucibus quam sapien vel est. Maecenas ac suscipit elit. Nullam interdum, lorem vitae venenatis pulvinar, ex dui malesuada nunc, tempus cursus enim metus vel nulla.'
+    },
+    {
+      id: 'about-me',
+      description: 'Tu beda wszystkie informacje o mnie, jaka to nie jestem zajebista itp....Phasellus sollicitudin, arcu vel iaculis ullamcorper, quam leo viverra orci, et faucibus quam sapien vel est. Maecenas ac suscipit elit. Nullam interdum, lorem vitae venenatis pulvinar, ex dui malesuada nunc, tempus cursus enim metus vel nulla.'
+    },
+    {
+      id: 'contact-me',
+      description: 'Tu beda dane kontaktowe do mnie czyli do mojego biura zajebistego oczywiscie.Phasellus sollicitudin, arcu vel iaculis ullamcorper, quam leo viverra orci, et faucibus quam sapien vel est. Maecenas ac suscipit elit. Nullam interdum, lorem vitae venenatis pulvinar, ex dui malesuada nunc, tempus cursus enim metus vel nulla.'
+    }
+    
+  ];
 
 
 
 
   const template = {
-    // projectLink: Handlebars.compile(document.querySelector('#template-project-link').innerHTML),
+    
     projects: Handlebars.compile(document.querySelector('#template-projects').innerHTML),
     projectsList: Handlebars.compile(document.querySelector('#template-projects-list').innerHTML),
+    contactList: Handlebars.compile(document.querySelector('#template-contact-list').innerHTML),
+    contact: Handlebars.compile(document.querySelector('#template-contacts').innerHTML),
   };
-
-  // eslint-disable-next-line no-inner-declarations
-  function createDOMFromHTML(htmlString) {
-    let div = document.createElement('div');
-    div.innerHTML = htmlString.trim();
-    return div.firstChild;
-  }
-
-
 
   const select = {
     all: {
       project: '.project',
       contact: '.contact',
       projectTitle: '.project-title',
+      links: '.list a',
     },
     listOf: {
       projects: '.projects.list',
@@ -132,107 +142,115 @@
     containerOf: {
       projectsList: '.sidebar',
       projects: '.content',
+      contacts: '.content',
+      
     }
   };
 
-
-  
-  for (let project of projects){
-    
-    const generatedHtml = template.projects(project);
-
-    const generatedTitleHtml = template.projectsList(project);
-    console.log('generatedTitleHtml', generatedTitleHtml);
-    const element2 =createDOMFromHTML(generatedTitleHtml);
-    
-    
+  // eslint-disable-next-line no-inner-declarations
+  function createDOMFromHTML(htmlString) {
+    let div = document.createElement('div');
+    div.innerHTML = htmlString.trim();
+    return div.firstChild;
+  }
+  // eslint-disable-next-line no-inner-declarations
+  function generateList(generatedList, wrapperClass){
+    const element = createDOMFromHTML(generatedList);
+    const wrapper = document.querySelector(wrapperClass);
+    wrapper.appendChild(element);
+  }
+  // eslint-disable-next-line no-inner-declarations
+  function generateText(generatedHtml, wrapperClass){
     const element = createDOMFromHTML(generatedHtml);
-    
-    const projectWrapper = document.querySelector(select.containerOf.projects);
-    
-    projectWrapper.appendChild(element);
-
-    
-
-    
-    const projectListWrapper = document.querySelector(select.containerOf.projectsList);
-    console.log('projectListWrapper', projectListWrapper);
-    projectListWrapper.appendChild(element2);
-    
-    
-
-    
+    const wrapper = document.querySelector(wrapperClass);
+    wrapper.appendChild(element);
 
   }
 
   
+  for (let project of projects){
+
+    generateList(template.projectsList(project), select.listOf.projects);
+
+    generateText(template.projects(project), select.containerOf.projects);
+    
+    // const generatedHtml = template.projects(project);
+
+    // const generatedListHtml = template.projectsList(project);
+    
+    // const element = createDOMFromHTML(generatedHtml);
+
+    // const element2 = createDOMFromHTML(generatedListHtml);
+    
+    // const projectWrapper = document.querySelector(select.containerOf.projects);
+
+    // const projectListWrapper = document.querySelector(select.listOf.projects);
+    
+    // projectWrapper.appendChild(element);
+    
+    // projectListWrapper.appendChild(element2);
+
+  }
+  for (let contact of contacts){
+    generateList(template.contactList(contact), select.listOf.contact);
+
+    generateText(template.contact(contact), select.containerOf.contacts);
+    
+    // const generatedtHtml = template.contact(contact);
+
+    // const generatedListHtml = template.contactList(contact);
+
+    // const element = createDOMFromHTML(generatedtHtml);
+
+    // const element2 = createDOMFromHTML(generatedListHtml);
+
+    // const contactWrapper = document.querySelector(select.containerOf.contacts);
+
+    // const contactListWrapper = document.querySelector(select.listOf.contact);
+
+    // contactWrapper.appendChild(element);
+
+    // contactListWrapper.appendChild(element2);
+ 
+    
+  }
+
+
+  const links = document.querySelectorAll('.list a');
   
 
+  for (const link of links) {
+    link.addEventListener('click', function(event){
+      event.preventDefault();
+      const clickedLink = this;
+     
+      /* remove class'active' from all links */
+      const projectLinks = document.querySelectorAll('.list a.active');
+      
+      for (const projectlink of projectLinks) {
+        projectlink.classList.remove('active');
+      }
+      /* add class 'active' to clicked link */
+      clickedLink.classList.add('active');
+
+      /* remove class 'active' from all projects and contacts */
+      const projects = document.querySelectorAll(select.all.project);
+          
+      for (const project of projects) {
+        project.classList.remove('active');
+      }
   
+      const hrefAttribute = clickedLink.getAttribute('href');
+      const projectId = hrefAttribute.substring(1,15);
+     
+      const targetProject = document.getElementById(projectId);
+     
+      targetProject.classList.add('active');
+      
+    });
+  }
 
 
-  
-  // const listClickHandler = function (event) {
-  //   event.preventDefault();
-  //   const clickedLink = this;
-  //   /* remove class'active' from all links */
-  //   const projectLinks = document.querySelectorAll('.list a.active');
-  //   for (const projectlink of projectLinks) {
-  //     projectlink.classList.remove('active');
-  //   }
-  //   /* add class 'active' to clicked link */
-  //   clickedLink.classList.add('active');
-
-  //   /* remove class 'active' from all projects and contacts */
-  //   const projects = document.querySelectorAll(select.all.project);
-  //   for (const project of projects) {
-  //     project.classList.remove('active');
-  //   }
-  //   const contacts = document.querySelectorAll(select.all.contact);
-  //   for (const contact of contacts) {
-  //     contact.classList.remove('active');
-  //   }
-  //   /* get href attribute from cklicked link */
-  //   const projectAttribute = clickedLink.getAttribute('href');
-
-  //   /* find project with href attribute */
-  //   const targetProject = document.querySelector(projectAttribute);
-
-  //   /* add to project class 'active */
-  //   targetProject.classList.add('active');
-  // };
-
-  // const generateProjectList = function () {
-  //   const projectList = document.querySelector(select.listOf.projects);
-
-  //   projectList.innerHTML = '';
-
-  //   const projects = document.querySelectorAll(select.all.project);
-
-  //   let titleList = '';
-  //   for (let project of projects) {
-  //     const projectID = project.getAttribute('id');
-
-  //     const projectTitleElement = project.querySelector('.project-title');
-
-  //     const projectTitle = projectTitleElement.innerHTML;
-  //     // const projectLinkHtml = '<li><a href = "#' + projectID + '">' + projectTitle + '</a></li>';
-  //     const linkHTMLData = { id: projectID, title: projectTitle };
-
-  //     const projectLinkHtml = templates.projectLink(linkHTMLData);
-
-  //     titleList = titleList + projectLinkHtml;
-  //   }
-  //   projectList.innerHTML = titleList;
-
-  //   const links = document.querySelectorAll('.list a');
-
-  //   for (const link of links) {
-  //     link.addEventListener('click', listClickHandler);
-  //   }
-  // };
-
-  // generateProjectList();
 
 
  
